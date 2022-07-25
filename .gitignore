@@ -3,7 +3,7 @@ target/
 mvnw**
 *.iml
 .idea/
-**local.yml
+**local.properties
 
 # Log file
 *.log
