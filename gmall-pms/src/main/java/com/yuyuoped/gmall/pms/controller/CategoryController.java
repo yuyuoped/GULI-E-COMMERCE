@@ -2,6 +2,8 @@ package com.yuyuoped.gmall.pms.controller;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +47,13 @@ public class CategoryController {
         return ResponseVo.ok(pageResultVo);
     }
 
+    @GetMapping("parent/{parentId}")
+    public ResponseVo<List<CategoryEntity>> queryCategoriesByParentId(@PathVariable("parentId") Long parentId){
+
+        List<CategoryEntity> category = categoryService.listByParentId(parentId);
+
+        return ResponseVo.ok(category);
+    }
 
     /**
      * 信息
