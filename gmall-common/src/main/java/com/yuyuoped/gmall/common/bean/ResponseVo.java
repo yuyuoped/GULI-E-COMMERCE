@@ -1,4 +1,4 @@
-package com.atguigu.gmall.common.bean;
+package com.yuyuoped.gmall.common.bean;
 
 import lombok.Data;
 

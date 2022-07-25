@@ -1,4 +1,4 @@
-package com.atguigu.gmall.common.bean;
+package com.yuyuoped.gmall.common.bean;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
