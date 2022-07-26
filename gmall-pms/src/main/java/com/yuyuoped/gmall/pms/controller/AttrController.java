@@ -45,6 +45,16 @@ public class AttrController {
         return ResponseVo.ok(pageResultVo);
     }
 
+    /**
+     * 信息
+     */
+    @GetMapping("/group/{gId}")
+    @ApiOperation("通过groupId查询")
+    public ResponseVo<List<AttrEntity>> queryAttrByGroupId(@PathVariable("gId") Long gId){
+        List<AttrEntity> attr = attrService.getByGroupId(gId);
+
+        return ResponseVo.ok(attr);
+    }
 
     /**
      * 信息
