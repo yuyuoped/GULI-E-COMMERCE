@@ -37,6 +37,17 @@ public class SkuController {
     /**
      * 列表
      */
+    @GetMapping("/spu/{id}")
+    @ApiOperation("通过spuId查询")
+    public ResponseVo<List<SkuEntity>> querySkuBySpuId(@PathVariable("id") Long id){
+        List<SkuEntity> skuEntities = skuService.listBySpuId(id);
+
+        return ResponseVo.ok(skuEntities);
+    }
+
+    /**
+     * 列表
+     */
     @GetMapping
     @ApiOperation("分页查询")
     public ResponseVo<PageResultVo> querySkuByPage(PageParamVo paramVo){

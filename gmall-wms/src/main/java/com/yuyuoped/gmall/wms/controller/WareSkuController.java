@@ -35,6 +35,17 @@ public class WareSkuController {
     private WareSkuService wareSkuService;
 
     /**
+     * 信息
+     */
+    @GetMapping("/sku/{id}")
+    @ApiOperation("详情查询")
+    public ResponseVo<List<WareSkuEntity>> queryWareSkuBySkuId(@PathVariable("id") Long id){
+        List<WareSkuEntity> wareSkus = wareSkuService.getBySkuId(id);
+
+        return ResponseVo.ok(wareSkus);
+    }
+
+    /**
      * 列表
      */
     @GetMapping
