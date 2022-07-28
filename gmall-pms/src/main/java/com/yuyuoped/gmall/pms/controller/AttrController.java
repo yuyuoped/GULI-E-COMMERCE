@@ -59,6 +59,17 @@ public class AttrController {
     /**
      * 信息
      */
+    @GetMapping("category/{cId}")
+    @ApiOperation("通过groupId查询")
+    public ResponseVo<List<AttrEntity>> queryAttrByCategoryId(@PathVariable("cId") Long cId, @RequestParam("type") Long type){
+        List<AttrEntity> attr = attrService.getByCategoryId(cId, type);
+
+        return ResponseVo.ok(attr);
+    }
+
+    /**
+     * 信息
+     */
     @GetMapping("{id}")
     @ApiOperation("详情查询")
     public ResponseVo<AttrEntity> queryAttrById(@PathVariable("id") Long id){

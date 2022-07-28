@@ -2,6 +2,7 @@ package com.yuyuoped.gmall.pms.controller;
 
 import java.util.List;
 
+import com.yuyuoped.gmall.pms.vo.SpuVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,8 +74,8 @@ public class SpuController {
      */
     @PostMapping
     @ApiOperation("保存")
-    public ResponseVo<Object> save(@RequestBody SpuEntity spu){
-		spuService.save(spu);
+    public ResponseVo<Object> bigSave(@RequestBody SpuVo spuVo){
+		spuService.bigSave(spuVo);
 
         return ResponseVo.ok();
     }

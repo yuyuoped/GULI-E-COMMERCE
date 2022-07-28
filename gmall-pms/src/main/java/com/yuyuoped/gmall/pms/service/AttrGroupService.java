@@ -5,6 +5,7 @@ import com.yuyuoped.gmall.common.bean.PageResultVo;
 import com.yuyuoped.gmall.common.bean.PageParamVo;
 import com.yuyuoped.gmall.pms.entity.AttrGroupEntity;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -20,5 +21,7 @@ public interface AttrGroupService extends IService<AttrGroupEntity> {
     PageResultVo queryPage(PageParamVo paramVo);
 
     List<AttrGroupEntity> getByCategoryId(Long cId);
+
+    Collection<AttrGroupEntity> queryAttrsByCategoryId(Long categoryId);
 }
 

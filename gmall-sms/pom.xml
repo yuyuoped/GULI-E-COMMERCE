@@ -15,8 +15,16 @@
     <dependencies>
         <dependency>
             <groupId>com.yuyuoped</groupId>
-            <artifactId>gmall-common</artifactId>
+            <artifactId>gmall-sms-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-all</artifactId>
         </dependency>
 
         <dependency>

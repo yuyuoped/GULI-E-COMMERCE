@@ -37,4 +37,9 @@ public class AttrServiceImpl extends ServiceImpl<AttrMapper, AttrEntity> impleme
         return attrMapper.selectList(new QueryWrapper<AttrEntity>().eq("group_id", gId));
     }
 
+    @Override
+    public List<AttrEntity> getByCategoryId(Long cId, Long type) {
+        return attrMapper.selectList(new QueryWrapper<AttrEntity>().eq("category_id", cId).eq("type", type));
+    }
+
 }

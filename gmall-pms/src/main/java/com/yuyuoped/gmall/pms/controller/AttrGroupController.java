@@ -1,5 +1,6 @@
 package com.yuyuoped.gmall.pms.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import io.swagger.annotations.Api;
@@ -52,6 +53,17 @@ public class AttrGroupController {
     @ApiOperation("详情查询")
     public ResponseVo<List<AttrGroupEntity>> queryAttrGroupByCategoryId(@PathVariable("cId") Long cId){
         List<AttrGroupEntity> attrGroups = attrGroupService.getByCategoryId(cId);
+
+        return ResponseVo.ok(attrGroups);
+    }
+
+    /**
+     * 信息
+     */
+    @GetMapping("withattrs/{categoryId}")
+    @ApiOperation("查询对应spu的属性信息")
+    public ResponseVo<Collection<AttrGroupEntity>> queryAttrsByCategoryId(@PathVariable("categoryId") Long categoryId){
+        Collection<AttrGroupEntity> attrGroups = attrGroupService.queryAttrsByCategoryId(categoryId);
 
         return ResponseVo.ok(attrGroups);
     }

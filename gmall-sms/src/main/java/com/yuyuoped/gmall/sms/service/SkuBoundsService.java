@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.yuyuoped.gmall.common.bean.PageResultVo;
 import com.yuyuoped.gmall.common.bean.PageParamVo;
 import com.yuyuoped.gmall.sms.entity.SkuBoundsEntity;
+import com.yuyuoped.gmall.sms.vo.SkuSalesVo;
 
 import java.util.Map;
 
@@ -17,5 +18,7 @@ import java.util.Map;
 public interface SkuBoundsService extends IService<SkuBoundsEntity> {
 
     PageResultVo queryPage(PageParamVo paramVo);
+
+    void saveSkuSales(SkuSalesVo skuSalesVo);
 }
 

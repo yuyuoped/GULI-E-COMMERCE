@@ -2,6 +2,7 @@ package com.yuyuoped.gmall.sms.controller;
 
 import java.util.List;
 
+import com.yuyuoped.gmall.sms.vo.SkuSalesVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,17 @@ public class SkuBoundsController {
 
     @Autowired
     private SkuBoundsService skuBoundsService;
+
+    /**
+     * 信息
+     */
+    @GetMapping("/sales/save")
+    @ApiOperation("详情查询")
+    public ResponseVo<Object> saveSkuSales(@RequestBody SkuSalesVo skuSalesVo){
+        skuBoundsService.saveSkuSales(skuSalesVo);
+
+        return ResponseVo.ok();
+    }
 
     /**
      * 列表

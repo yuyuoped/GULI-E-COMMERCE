@@ -20,5 +20,7 @@ public interface AttrService extends IService<AttrEntity> {
     PageResultVo queryPage(PageParamVo paramVo);
 
     List<AttrEntity> getByGroupId(Long gId);
+
+    List<AttrEntity> getByCategoryId(Long cId, Long type);
 }
 
