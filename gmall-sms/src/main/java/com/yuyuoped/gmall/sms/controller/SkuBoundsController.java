@@ -38,7 +38,7 @@ public class SkuBoundsController {
     /**
      * 信息
      */
-    @GetMapping("/sales/save")
+    @PostMapping("/sales/save")
     @ApiOperation("详情查询")
     public ResponseVo<Object> saveSkuSales(@RequestBody SkuSalesVo skuSalesVo){
         skuBoundsService.saveSkuSales(skuSalesVo);
