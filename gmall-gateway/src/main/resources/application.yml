@@ -8,7 +8,7 @@ spring:
     gateway:
       routes:
         - id: oms-route
-          uri: lb://oms-service
+          uri: lb://oms
           predicates:
             - Path=/oms/**
         - id: pms-route
@@ -16,16 +16,19 @@ spring:
           predicates:
             - Path=/pms/**
         - id: sms-route
-          uri: lb://sms-service
+          uri: lb://sms
           predicates:
             - Path=/sms/**
         - id: ums-route
-          uri: lb://ums-service
+          uri: lb://ums
           predicates:
             - Path=/ums/**
         - id: wms-route
-          uri: lb://wms-service
+          uri: lb://wms
           predicates:
             - Path=/wms/**
-
+        - id: search-route
+          uri: lb://search
+          predicates:
+            - Host=search.gmall.com
 
