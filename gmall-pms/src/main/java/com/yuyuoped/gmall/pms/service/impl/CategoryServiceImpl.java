@@ -44,4 +44,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, CategoryEnt
                 new QueryWrapper<CategoryEntity>().eq("parent_id", parentId));
     }
 
+    @Override
+    public List<CategoryEntity> queryLevel23CategoriesByPid(Long pid) {
+        return categoryMapper.queryCategoriesByPid(pid);
+    }
+
 }

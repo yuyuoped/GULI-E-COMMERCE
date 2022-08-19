@@ -5,6 +5,7 @@ import com.yuyuoped.gmall.common.bean.PageResultVo;
 import com.yuyuoped.gmall.common.bean.PageParamVo;
 import com.yuyuoped.gmall.pms.entity.SkuAttrValueEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,5 +18,7 @@ import java.util.Map;
 public interface SkuAttrValueService extends IService<SkuAttrValueEntity> {
 
     PageResultVo queryPage(PageParamVo paramVo);
+
+    List<SkuAttrValueEntity> querySearchAttrValueByCidAndSkuId(Long cid, Long skuId);
 }
 

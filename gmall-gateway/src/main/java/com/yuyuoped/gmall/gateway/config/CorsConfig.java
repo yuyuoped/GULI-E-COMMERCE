@@ -20,6 +20,7 @@ public class CorsConfig {
         config.addAllowedOrigin("http://manager.gmall.com");
         config.addAllowedOrigin("http://api.gmall.com");
         config.addAllowedOrigin("http://www.gmall.com");
+        config.addAllowedOrigin("http://gmall.com");
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
         config.setAllowCredentials(true);

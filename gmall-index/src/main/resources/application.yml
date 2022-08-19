@@ -26,17 +26,6 @@ spring:
     cache: false
     prefix: classpath:/templates/
     suffix: .html
-  rabbitmq:
-    host: 192.168.48.11
-    port: 5672
-    virtual-host: /yuyuoped
-    username: yuyuoped
-    password: yuyuoped
-    listener:
-      simple:
-        prefetch: 1
-        concurrency: 6
-        acknowledge-mode: manual
 feign:
   sentinel:
     enabled: true
