@@ -16,6 +16,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -78,7 +79,8 @@ public class GmallCacheAspect {
             Object result = pjp.proceed();
             // 5.把数据放入缓存并释放分布式锁
             int timeout = gmallCache.timeout();
-            redisTemplate.opsForValue().set(key, JSON.toJSONString(result), timeout, TimeUnit.SECONDS);
+            int random = new Random().nextInt(gmallCache.randomAdditionTime());
+            redisTemplate.opsForValue().set(key, JSON.toJSONString(result), timeout + random, TimeUnit.SECONDS);
             return result;
         } finally {
             fairLock.unlock();
