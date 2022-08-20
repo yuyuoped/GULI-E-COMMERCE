@@ -26,6 +26,9 @@ spring:
     cache: false
     prefix: classpath:/templates/
     suffix: .html
+  redis:
+    host: 182.61.56.79
+    port: 6379
 feign:
   sentinel:
     enabled: true
